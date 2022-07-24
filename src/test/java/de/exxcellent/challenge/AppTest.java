@@ -33,9 +33,10 @@ class AppTest {
     }
     
     @Test
-    void runFootball() {
-        /**App.main("--football", "football.csv");
-        assertEquals("Aston Villa", analyseData("football.csv"));*/
+    void runFootball() throws IOException {
+        //App.main("--football", "football.csv");
+        App.main();
+        assertEquals("Aston_Villa", Football.analyseData("football.csv"));
     }
 
 }

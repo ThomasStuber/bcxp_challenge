@@ -28,5 +28,5 @@ public class DataTable {
 			this.data.add(Arrays.asList(values));
 		}
 		reader.close();
-		}
+	}
 }

@@ -19,10 +19,10 @@ public final class App {
 
         // Your preparation code …
 
-        String dayWithSmallestTempSpread = Weather.analyseData("weather.csv");     // Your day analysis function call …
+        String dayWithSmallestTempSpread = Weather.analyseData("weather.csv");
         System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
 
-        String teamWithSmallestGoalSpread = "A good team"; // Your goal analysis function call …
+        String teamWithSmallestGoalSpread = Football.analyseData("football.csv");
         System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
     }
 }
