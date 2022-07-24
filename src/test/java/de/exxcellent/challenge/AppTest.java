@@ -24,8 +24,15 @@ class AppTest {
     }
 
     @Test
+    void runWeather() {
+        App.main("--weather", "weather.csv");
+        assertEquals("14", analyseData("weather.csv"));
+    }
+    
+    @Test
     void runFootball() {
         App.main("--football", "football.csv");
+        assertEquals("Aston Villa", analyseData("football.csv"));
     }
 
 }
