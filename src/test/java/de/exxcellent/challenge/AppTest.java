@@ -27,15 +27,13 @@ class AppTest {
 
     @Test
     void runWeather() throws IOException {
-        //App.main("--weather", "weather.csv");
-    	App.main();
+        App.main("--weather", "weather.csv");
         assertEquals("14", Weather.analyseData("weather.csv"));
     }
     
     @Test
     void runFootball() throws IOException {
-        //App.main("--football", "football.csv");
-        App.main();
+        App.main("--football", "football.csv");
         assertEquals("Aston_Villa", Football.analyseData("football.csv"));
     }
 

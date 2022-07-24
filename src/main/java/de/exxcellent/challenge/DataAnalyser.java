@@ -4,23 +4,25 @@ import java.util.List;
 
 public class DataAnalyser {
 	
-	public static String calculateSmallestDifference(List<List<String>> data, int column1, int column2) {
+	public static String calculateSmallestDifference(DataTable table, int column1, int column2) {
 		
 		int minimumDifference = Integer.MAX_VALUE;
-		String minimumDay = "";
+		String minimumItem = "";
 		
 		int i = 0;
 		
-		for (List<String> list : data) {
+		/** iterate over data table and calculate item with smallest absolute difference between the columns */
+		for (List<String> list : table.getData()) {
 			if (i > 0) {
 				int difference = Math.abs(Integer.parseInt(list.get(column1)) - Integer.parseInt(list.get(column2)));
 				if (difference < minimumDifference) {
 					minimumDifference = difference;
-					minimumDay = list.get(0);
+					minimumItem = list.get(0);
 				}
 			}
 			i++;
 		}
-		return minimumDay;
+		return minimumItem;
 	}
+	
 }

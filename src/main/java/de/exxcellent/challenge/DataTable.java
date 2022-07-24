@@ -18,15 +18,18 @@ public class DataTable {
 	
 	public void readFile(String file) throws IOException {
 		
+		/** retrieve file from resources folder */
 		InputStream is = this.getClass().getResourceAsStream(file);
 		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 		String line;
 		
+		/** read file and store as table */
 		while ((line = reader.readLine()) != null) {
 			String[] values = line.split(",");
 			this.data.add(Arrays.asList(values));
 		}
 		reader.close();
 	}
+	
 }

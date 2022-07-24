@@ -17,12 +17,16 @@ public final class App {
      */
     public static void main(String... args) throws IOException {
 
-        // Your preparation code …
-
-        String dayWithSmallestTempSpread = Weather.analyseData("weather.csv");
-        System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
-
-        String teamWithSmallestGoalSpread = Football.analyseData("football.csv");
-        System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
+    	if (args.length != 1 || args.length == 1 && args[0].equals("--weather")) {
+    		
+    		String dayWithSmallestTempSpread = Weather.analyseData("weather.csv");
+            System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
+    	}
+    	if (args.length != 1 || args.length == 1 && args[0].equals("--football")) {
+    		
+    		String teamWithSmallestGoalSpread = Football.analyseData("football.csv");
+            System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
+    	}
     }
+    
 }
