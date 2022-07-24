@@ -1,17 +1,19 @@
 package de.exxcellent.challenge;
 
 import java.io.IOException;
-import java.util.List;
 
 public class Weather {
 
 	public static String analyseData(String file) throws IOException {
 		
-		List<List<String>> data = DataReader.readFile(file);// read file
+		// read file
+		DataTable table = new DataTable();
+		table.readFile(file);
+		//List<List<String>> data = DataTable.readFile(file);
 		// calculate smallest difference
-		// return result
+		String smallestDifference = DataAnalyser.calculateSmallestDifference(table.getData());
 		
-		return "";
+		return smallestDifference;
 	}
 	
 }
