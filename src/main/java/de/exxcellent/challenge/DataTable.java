@@ -16,6 +16,12 @@ public class DataTable {
 		return this.data;
 	}
 	
+	/**
+	 * Reads file and stores it in data
+	 * 
+	 * @param file - file to be read
+	 * @throws IOException
+	 */
 	public void readFile(String file) throws IOException {
 		
 		/** retrieve file from resources folder */

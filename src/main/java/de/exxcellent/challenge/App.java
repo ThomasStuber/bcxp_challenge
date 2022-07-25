@@ -11,20 +11,28 @@ import java.io.IOException;
 public final class App {
 
     /**
-     * This is the main entry method of your program.
-     * @param args The CLI arguments passed
+     * Main method
+     * 
+     * prints day with smallest difference between maximum and minimum temperature
+     * and/or team with smallest difference between goals and goals allowed
+     * 
+     * @param args - pass "--football" or "--weather" if only interested in one of the data (optional)
      * @throws IOException 
      */
     public static void main(String... args) throws IOException {
 
     	if (args.length != 1 || args.length == 1 && args[0].equals("--weather")) {
     		
-    		String dayWithSmallestTempSpread = Weather.analyseData("weather.csv");
+    		Data weather = new Data();
+    		weather.analyseData("weather.csv", 1, 2);
+    		String dayWithSmallestTempSpread = weather.getMinimum();
             System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
     	}
     	if (args.length != 1 || args.length == 1 && args[0].equals("--football")) {
     		
-    		String teamWithSmallestGoalSpread = Football.analyseData("football.csv");
+    		Data football = new Data();
+    		football.analyseData("football.csv", 5, 6);
+    		String teamWithSmallestGoalSpread = football.getMinimum();
             System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
     	}
     }
