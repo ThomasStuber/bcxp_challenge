@@ -8,12 +8,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Class to read file and store data as table
+ */
+
 public class DataTable {
 	
-	private List<List<String>> data = new ArrayList<>();
+	private List<List<String>> table = new ArrayList<>();
 	
 	public List<List<String>> getData() {
-		return this.data;
+		return this.table;
+	}
+	
+	public void setData(List<List<String>> rows) {
+		this.table = rows;
 	}
 	
 	/**
@@ -24,16 +32,16 @@ public class DataTable {
 	 */
 	public void readFile(String file) throws IOException {
 		
-		/** retrieve file from resources folder */
+		// retrieve file from resources folder
 		InputStream is = this.getClass().getResourceAsStream(file);
 		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 		String line;
 		
-		/** read file and store as table */
+		// read file and store as table
 		while ((line = reader.readLine()) != null) {
 			String[] values = line.split(",");
-			this.data.add(Arrays.asList(values));
+			this.table.add(Arrays.asList(values));
 		}
 		reader.close();
 	}

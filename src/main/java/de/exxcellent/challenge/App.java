@@ -13,7 +13,7 @@ public final class App {
     /**
      * Main method
      * 
-     * prints day with smallest difference between maximum and minimum temperature
+     * Prints day with smallest difference between maximum and minimum temperature
      * and/or team with smallest difference between goals and goals allowed
      * 
      * @param args - pass "--football" or "--weather" if only interested in one of the data (optional)
